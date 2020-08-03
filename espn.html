@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>myESPN</title>
+  <script src="https://kit.fontawesome.com/2ec0ba2502.js" crossorigin="anonymous"></script>
+  <style>
+        body{
+            background-color: #d9d9d9;
+        }
+        .white{
+            background-color: white;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin:0px 0px;
+        }
+        th, td{
+            padding:3px 5px;
+        }
+        th{
+            background-color: #f2f2f2;
+        }
+        #topevents{
+            padding: 5px 5px;
+            border: 1px solid grey;
+            border-radius: 15px;
+        }
+        .topeventsdropdowncontent{
+            display: none;
+            position: absolute;
+            width: 112px;
+        }
+        .topeventsdropdown:hover .topeventsdropdowncontent {
+            display: block;
+            z-index: 999;
+        }
+        .topeventsdropdowncontent li:hover{
+            background-color: blue;
+            color: white;
+        }
+        #nobullets {
+            list-style-type: none;
+            text-align: left;
+            font-size: 13px;
+            padding: 1px 14px;
+        }
+        #nobullets li{
+            padding: 8px 4px;
+        }
+        .navbar > div > li{
+            overflow: hidden;
+            margin: 0px 0px;
+            position: sticky;
+            top: 0;
+            color: white;
+            background-color: #333333;
+            font-size: 18px;
+            padding: 10px 20px;
+        }
+        nav li{
+            position: sticky;
+            list-style-type: none;
+            padding: 0px;
+            margin-left:0px;
+        }
+        #myespn{
+            font-size: 25px;
+            background-color: #cc0000;
+            padding: 7px 10px;
+            font-style: italic;
+            margin: 0px 0px ;
+            color:white;
+            position: sticky;
+            top:1;
+        }
+        .navdropdown{
+            color: black;
+            background-color: white;
+            float: none;
+            display: none;
+            padding: 10px 15px;
+            margin: 0px;
+            z-index: 999;
+         }
+        .navdropdown li{
+            padding: 5px;
+            font-size: 15px;
+        }
+        .navdropdown li:hover{
+            background-color: red;
+            color: white;
+        }
+        .navbar div:hover .navdropdown{
+            display: block;
+            position: absolute;
+            }
+        .navbar{
+            padding: 0;
+            margin:0px 0px;
+        }
+        .navbar div div ul{
+            padding-left: 0px;
+        }
+        main{
+            display:flex;
+            margin: 10px 0px;
+        }
+        .left ul{
+            padding: 0px 6px;
+            margin 0px;
+        }
+        .left{
+            width:200px;
+            background-color: #f2f2f2;
+            padding: 15px 10px;
+            margin:25px 5px;
+            border-radius: 10px;
+        }
+        .left p{
+            margin:0px;
+            padding: 0px 7px;
+            padding-bottom: 15px;
+            font-size: 15px;
+            border-bottom: black dotted 2px;
+        }
+        .left li{
+            list-style-type: none;
+            padding: 8px 0px;
+            font-size: 15px;
+            border-bottom: black dotted 1px;
+        }
+        .left li:hover{
+            background-color: ivory;
+        }
+        .middle{
+            padding: 15px 10px;
+            margin:5px 5px;
+        }
+        .story{
+             padding: 15px 10px;
+            margin:15px 5px;
+            background-color: white;
+            position: relative;
+            width:655px;
+            border-radius: 10px;
+        }
+        .story1head{
+            position: absolute;
+            bottom: 140px;
+            right:25px;
+            color: white;
+            font-size: 40px;
+            width:450px;
+            text-align: right;
+        }
+        .story2head{
+            font-size: 30px;
+        }
+        .right{
+            background-color: white;
+            padding: 15px 10px;
+            margin:25px 5px;
+         
+            border-radius: 10px;
+        }
+        .right ul{
+            padding: 0px 15px;
+            margin 0px;
+        }
+        .right p{
+            margin:0px;
+            padding: 0px 7px;
+            padding-bottom: 15px;
+            font-size: 15px;
+            border-bottom: black dotted 2px;
+        }
+        .right li{
+            list-style-type: square;
+            font-size: 15px;
+            padding: 7px 0px;
+        }
+        .right li:hover {
+            color:blue;
+        }
+  </style>
+</head>
+<body>
+    <top>
+        <table style="width:100%" >
+            <th>
+                <div id="topevents" class="topeventsdropdown">
+                    <span >TOP EVENTS&ensp;<i class="fas fa-chevron-down"></i></span>
+                        <div class="topeventsdropdowncontent , white">
+                            <ul id="nobullets">
+                                <li>Top Events</li>
+                                <li>La Liga</li>
+                                <li>Bundesliga</li>
+                                <li>Seria A</li>
+                                <li>Champions League</li>
+                            </ul>
+                        </div> 
+                </div>
+            </th>
+            <th>
+                La Liga
+            </th>
+            <td class="white">
+                FT<br><br>LEV&emsp;&emsp;&emsp;&emsp;&ensp;4<br>RBT&emsp;&emsp;&emsp;&emsp;&ensp;2
+            </td>
+            <td class="white">
+                FT<br><br>VIL&emsp;&emsp;&emsp;&emsp;&emsp;2<br>VAL&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;0
+            </td>
+            <td class="white">
+                11:00 pm<br><br>GRA&emsp;&emsp;&emsp;&emsp;&emsp;<br>EIB&emsp;&emsp;&emsp;&emsp;&emsp;
+            </td>
+            <td class="white">
+                Mon 1:30 am<br><br>ESP&emsp;&emsp;&emsp;&emsp;&emsp;<br>RMA&emsp;&emsp;&emsp;&emsp;&emsp; 
+            </td>
+            <th>
+                Champions League    
+            </th>
+            <td class="white">
+                FT<br><br>VAL&emsp;&emsp;&emsp;&emsp;&emsp;4<br>ALT&emsp;&emsp;&emsp;&emsp;&emsp;8
+            </td>
+            <td class="white">
+                FT<br><br>LEI&emsp;&emsp;&emsp;&emsp;&emsp;4<br>TOT&emsp;&emsp;&emsp;&emsp;&emsp;0
+            </td>
+            <td class="white">
+                Thursday 13 Aug<br><br>TBD&emsp;&emsp;&emsp;&emsp;&emsp;<br>TBD&emsp;&emsp;&emsp;&emsp;&emsp;
+            </td>
+            <td class="white">
+                Friday 14 Aug<br><br>TBD&emsp;&emsp;&emsp;&emsp;&emsp;<br>TBD&emsp;&emsp;&emsp;&emsp;&emsp;
+            </td>
+        </table>
+        <nav>
+           <ul class="navbar">
+               <div style="float:left"  >
+                    <p id="myespn"><strong>myESPN</strong></p>
+               </div>
+               <div style="float:left">
+                    <li>Cricket</li>
+                    <div class="navdropdown">
+                        <ul>
+                            <li>IPL</li>
+                            <li>Friendly Matches</li>
+                            <li>Test cricket</li>
+                            <li>One day matches</li>
+                            <li>T20 cricket</li>
+                        </ul>
+                    </div>
+               </div>
+               <div style="float:left">
+                    <li>Football</li>
+                    <div class="navdropdown">
+                        <ul>
+                            <li>Seria A</li>
+                            <li>English Premire League</li>
+                            <li>La Liga</li>
+                            <li>Bundesliga</li>
+                            <li>Ligue 1</li>
+                            <li>Champions League</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="float:left">
+                    <li >NBA</li>
+                    <div class="navdropdown">
+                        <ul>
+                            <li>Celtics</li>
+                            <li>Tigers</li>
+                            <li>Standings</li>
+                            <li>Statistics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="float:left" >
+                    <li><i class="fas fa-ellipsis-h"></i></li>
+                    <div class="navdropdown">
+                        <ul>
+                            <li>Tennis</li>
+                            <li>Badminton</li>
+                            <li>Formula 1</li>
+                            <li>Baseball</li>
+                            <li>More Sports</li>
+                        </ul>
+                    </div>
+               </div>
+               <div style="float:right">
+                    <li ><i class="fas fa-search"></i></li>
+               </div>
+               <div  style="float:right">
+                    <li><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></li>
+                    <div class="navdropdown">
+                        <ul>
+                            <li>More information</li>
+                        </ul>
+                    </div>
+               </div>
+               <div  style="float:right">
+                    <li>Award</li>
+               </div>
+               <div  style="float:right">
+                    <li>Watch</li>
+               </div>
+               <div>
+                    <li>&emsp;</li>
+               </div>
+           </ul>
+        </nav>
+    </top>
+    <main>
+        <section >
+            <div class=left>
+            <p><strong>Featured</strong></p>
+            <ul>
+                <li><i class="fas fa-futbol"></i>&emsp;Premier League</li>
+                <li><i class="fas fa-futbol"></i>&emsp;La Liga</li>
+                <li><i class="fas fa-futbol"></i>&emsp;Bundesliga</li>
+                <li><i class="fas fa-futbol"></i>&emsp;Serie A</li>
+                <li><i class="fas fa-dumbbell"></i>&emsp;UFC</li>
+                <li><i class="far fa-circle"></i>&emsp;Vincy T10 League 2020</li>
+                <li><i class="fas fa-trophy"></i>&emsp;ESPN India Awards 2019</li>
+                <li><i class="fas fa-basketball-ball"></i>&emsp;Remembering Kobe</li>
+                <li><i class="fas fa-basketball-ball"></i>&emsp;FIH Pro League 2020</li>
+                <li><i class="fas fa-futbol"></i>&emsp;Champions League</li>
+                <li><i class="fas fa-futbol"></i>&emsp;Europa League</li>
+                <li><i class="fas fa-futbol"></i>&emsp;ESPN Fantasy Football</li>
+            </ul>
+            </div>
+        </section>
+        <section class=middle>
+            <div class="story">
+                <img src="https://images.unsplash.com/photo-1522778590545-a5a925dcf6f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" style="length:auto;width:650px;">
+                <div class="story1head">Real Madrid leads in LaLiga title race</div>
+                <p>
+                    Real Madrid were clearly thrilled with last night's result in Valdebebas - 
+                    one which allowed them to extend their lead at the top of the table
+                    (Zizou's team are on 74 points, Barcelona lie second on 70).
+                    Madrid's happiness is understandable if we remember that just before 
+                    LaLiga was put on hold for the coronavirus crisis, the team had slipped to second place, 
+                    trailing Barça by two points after the Week 27 defeat to Betis at the Benito Villamarín on 8 March.
+                </p>
+            </div>
+            <div class="story">
+                <img src="https://cdn.pixabay.com/photo/2017/08/30/23/41/football-2698969_960_720.jpg" style="length:auto;width:650px;">
+                <div class="story2head">Liverpool lifts up the English Premire League trophy after 30 years</div>
+                <p>
+                    For the first time in 30 years, Liverpool are Premier League champions.
+                    Chelsea’s 2-1 victory over Manchester City at Stamford Bridge on Thursday meant that\
+                    the Reds were finally unassailable at the summit of the standings, 
+                    having dominated the division throughout the season.
+                </p>
+                
+            </div>
+        </section>
+        <section >
+            <div class=right>
+                <p><strong>Top Headlines</strong></p>
+                <ul>
+                    <li>Ex-Barca chief: Messi too smart to be club pawn</li>
+                    <li>Ferrari boss: Pandemic sealed Vettel's departure</li>
+                    <li>Allegations against FIFA boss to be checked by prosecutor</li>
+                    <li>Hamilton to race with BLM tribute helmet in 2020</li>
+                    <li>Report: Upset Messi looking to leave Barcelona</li>
+                    <li>Sources: Clippers shut facilities after positive test</li>
+                    <li>Sane joins Bayern from Man City for €49m</li>
+                    <li>Davis: Lakers' title chances higher after long rest</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
